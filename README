@@ -1,0 +1,13 @@
+
+scrapy crawl rumours -o items.json
+
+The following command will silence the log (--nolog) while at the same time sending what would normally go to the file to your STDOUT instead (-o /dev/stdout):
+scrapy crawl rumours -t jsonlines --nolog -o /dev/stdout
+
+Additionally, the following export formats are available:
+'xml', 'jsonlines', 'jl', 'json', 'csv', 'pickle', 'marshal'
+
+sudo apt-get install python-dev libssl-dev libffi-dev python-pip build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev libxml2-dev libxslt1-dev python-dev libssl-dev libffi-dev python-pip
+
+sudo pip install w3lib cssselect pyOpenSSL Scrapy twisted lxml cffi service_identity
+
