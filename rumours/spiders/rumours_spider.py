@@ -33,7 +33,12 @@ class RumoursSpider(scrapy.Spider):
             div.append(sel.xpath("tr[2]/td/div[2]/div[3]/text()").extract())
             div.append(sel.xpath("tr[2]/td/div[2]/div[4]/text()").extract())
             datetime = sel.xpath("tr[1]/td[1]/text()").extract()
-            content = sel.xpath("tr[2]/td[2]/div[starts-with(@id, 'post_message')]/text()").extract()
+            #grap text
+            #content = sel.xpath("tr[2]/td[2]/div[starts-with(@id, 'post_message')]/text()").extract()
+            #grab text with descendants (inside <a href> for example
+            #content = sel.xpath("tr[2]/td[2]/div[starts-with(@id, 'post_message')]/descendant-or-self::text()").extract()
+            #grab all text without parsing elements (so you can keep links and their href's
+            content = sel.xpath("tr[2]/td[2]/div[starts-with(@id, 'post_message')]").extract()
             item = RumoursPost()
             
             for x in div:
