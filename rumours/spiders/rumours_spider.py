@@ -51,7 +51,10 @@ class RumoursSpider(scrapy.Spider):
                         item[field] = x[0].strip().split(":")[1].strip()
             
             item['datetime'] = datetime[2].strip()
-            item['content'] = content[0].strip()
+            item['content'] = ''
+            for x in content:
+                item['content'] += x
+            item['content'] = item['content'].strip()
             item['username'] = username[0].strip()
             pitem['replies'].append(item);
         nextpage = response.xpath("//a[text()='>']/@href").extract()
